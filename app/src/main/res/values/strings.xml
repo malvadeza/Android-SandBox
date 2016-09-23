@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SandBox</string>
+    <string name="title_activity_cursor_loader_sqlite">CursorLoaderSQLite</string>
+</resources>
