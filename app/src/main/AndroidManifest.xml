@@ -19,6 +19,10 @@
         <activity
             android:name=".threads.ThreadsActivity"
             android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".google.GoogleLoginActivity"
+            android:label="@string/title_activity_google_login"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

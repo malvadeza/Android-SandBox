@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "959940445510",
+    "project_id": "android-sandbox-8d0db"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959940445510:android:b4c717dc3068c18c",
+        "android_client_info": {
+          "package_name": "io.github.malvadeza.sandbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959940445510-4h6ei78em6ltmi0js1uog4mi58vdh3ue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.malvadeza.sandbox",
+            "certificate_hash": "3851FB5CEAC4D573776379E49F1A33577AF1FE1D"
+          }
+        },
+        {
+          "client_id": "959940445510-6qrhejhrshdk0fboe2o4eilenni4r0a6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR6dEyr0ceybytRPIvtbgnKregnqFlyyU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

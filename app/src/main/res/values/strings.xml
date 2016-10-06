@@ -3,4 +3,5 @@
     <string name="title_activity_cursor_loader_sqlite">CursorLoaderSQLite</string>
     <string name="title_activity_handlers">Handlers</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_google_login">GoogleLoginActivity</string>
 </resources>
