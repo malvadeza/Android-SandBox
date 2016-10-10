@@ -23,12 +23,22 @@
         <activity
             android:name=".google.GoogleLoginActivity"
             android:label="@string/title_activity_google_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".cardview.listview.ListActivity"
+            android:label="@string/title_activity_list"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".cardview.recyclerview.RecyclerActivity"
+            android:label="@string/title_activity_recycler"
+            android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
 
         <service

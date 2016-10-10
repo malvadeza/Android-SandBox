@@ -4,4 +4,6 @@
     <string name="title_activity_handlers">Handlers</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_google_login">GoogleLoginActivity</string>
+    <string name="title_activity_list">ListActivity</string>
+    <string name="title_activity_recycler">RecyclerActivity</string>
 </resources>
