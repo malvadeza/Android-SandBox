@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin"
+    tools:context="io.github.malvadeza.sandbox.customviews.CustomViewActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Tally Counter View"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:transitionName="title"
+        tools:targetApi="lollipop" />
+
+    <LinearLayout
+        android:transitionGroup="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <io.github.malvadeza.sandbox.customviews.views.TallyCounterView
+            android:id="@+id/counter_view"
+            android:layout_width="320dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center" />
+
+        <Button
+            android:id="@+id/click_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="20dp"
+            android:text="Click Me!" />
+    </LinearLayout>
+
+</LinearLayout>

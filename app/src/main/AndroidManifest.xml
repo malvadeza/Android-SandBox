@@ -9,6 +9,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main_activity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".cursorloadersqlite.CursorLoaderSQLite"
             android:label="@string/title_activity_cursor_loader_sqlite"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -27,18 +37,20 @@
         <activity
             android:name=".cardview.listview.ListActivity"
             android:label="@string/title_activity_list"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".cardview.recyclerview.RecyclerActivity"
             android:label="@string/title_activity_recycler"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".customviews.CustomViewActivity"
+            android:label="@string/title_activity_custom_view"
+            android:theme="@style/AppTheme.CustomView" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".fragmenttransition.FragmentTransitionActivity"
+            android:label="@string/title_activity_fragment_transition"
+            android:theme="@style/AppTheme.CustomView" />
 
         <service
             android:name=".threads.ThreadsService"

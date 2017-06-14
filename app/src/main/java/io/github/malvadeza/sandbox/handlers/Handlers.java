@@ -33,7 +33,6 @@ public class Handlers extends AppCompatActivity {
         mHandlerThread = new MyHandlerThread("MyTestingThread");
         mHandlerThread.start();
         mHandler = new Handler(mHandlerThread.getLooper()){
-
             // This doesn't run in the UI Thread
             @Override
             public void handleMessage(Message msg) {
@@ -75,6 +74,7 @@ public class Handlers extends AppCompatActivity {
         public MyHandlerThread(String name) {
             super(name);
         }
+
     }
 
 }

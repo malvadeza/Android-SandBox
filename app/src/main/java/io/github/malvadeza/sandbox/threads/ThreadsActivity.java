@@ -27,6 +27,8 @@ public class ThreadsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_threads);
 
+        ThreadsActivity.class.getName();
+
         Log.d("ThreadsActivity", "ThreadsActivity id -> " + Thread.currentThread().getId());
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

@@ -1,9 +1,23 @@
 <resources>
 
+    <style name="AppTheme" parent="BaseAppTheme">
+        <!--<item name="android:windowContentTransitions">false</item>-->
+        <!--<item name="android:windowActivityTransitions">false</item>-->
+        <!--<item name="android:windowSharedElementsUseOverlay">false</item>-->
+        <item name="android:windowSharedElementExitTransition">@transition/custom_title_exit</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.CustomView">
+        <item name="android:statusBarColor">#FF0000</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/custom_title_enter</item>
+        <item name="android:windowEnterTransition">@transition/custom_enter</item>
+        <item name="android:windowReturnTransition">@transition/custom_return</item>
     </style>
 </resources>
