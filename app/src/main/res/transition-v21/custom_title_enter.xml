@@ -2,8 +2,8 @@
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:duration="@android:integer/config_longAnimTime">
-    <!--<changeBounds android:interpolator="@android:interpolator/linear_out_slow_in"-->
-        <!--tools:targetApi="lollipop" />-->
+    <changeBounds android:interpolator="@android:interpolator/linear_out_slow_in"
+        tools:targetApi="lollipop" />
     <!--<fade android:fadingMode="fade_in" />-->
-    <transition class="io.github.malvadeza.sandbox.transition.CustomTransition" />
+    <!--<transition class="io.github.malvadeza.sandbox.transition.CustomTransition" />-->
 </transitionSet>

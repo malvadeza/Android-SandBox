@@ -6,7 +6,7 @@ import android.widget.Button
 import io.github.malvadeza.sandbox.R
 import io.github.malvadeza.sandbox.customviews.views.TallyCounterView
 
-class CustomViewActivity : AppCompatActivity() {
+class TallyCounterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

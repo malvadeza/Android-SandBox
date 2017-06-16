@@ -1,16 +1,20 @@
 package io.github.malvadeza.sandbox
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.ActivityOptionsCompat
+import android.support.v4.app.SharedElementCallback
 import android.support.v4.view.ViewCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import io.github.malvadeza.sandbox.customviews.CustomViewActivity
+import io.github.malvadeza.sandbox.customviews.TallyCounterActivity
+import io.github.malvadeza.sandbox.customviews.TouchViewActivity
 import io.github.malvadeza.sandbox.fragmenttransition.FragmentTransitionActivity
 
 class MainActivity : AppCompatActivity() {
@@ -22,32 +26,68 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
 
         val activities = listOf(
-                Sandbox("Tally Counter View", -1, CustomViewActivity::class.java),
-                Sandbox("Fragment Transition", -1, FragmentTransitionActivity::class.java)
+                Sandbox("Tally Counter View", -1, TallyCounterActivity::class.java),
+                Sandbox("Fragment Transition", -1, FragmentTransitionActivity::class.java),
+                Sandbox("Touch View", -1, TouchViewActivity::class.java)
         )
         val sandboxesList = findViewById(R.id.rv_sandboxes) as RecyclerView
-        val sandboxAdapter = SandboxAdapter(activities) { sandbox, sharedView ->
+        val sandboxAdapter = SandboxAdapter(activities) { sandbox, sharedView, position ->
             val intent = Intent(this, sandbox.activity)
+            intent.putExtra("POSITION_ON_RV", position)
+
             ViewCompat.setTransitionName(sharedView, "title")
+
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this, sharedView, "title")
             startActivity(intent, options.toBundle())
         }
 
+        setExitSharedElementCallback(object : SharedElementCallback() {
+            override fun onMapSharedElements(names: MutableList<String>, sharedElements: MutableMap<String, View>) {
+                super.onMapSharedElements(names, sharedElements)
+
+                if (names.size != sharedElements.size) {
+
+                }
+
+                Log.d("MainActivity", "setExitSharedElementCallback##onMapSharedElements")
+            }
+        })
+
         sandboxesList.adapter = sandboxAdapter
         sandboxesList.setHasFixedSize(true)
+    }
+
+    override fun onActivityReenter(resultCode: Int, data: Intent?) {
+        super.onActivityReenter(resultCode, data)
+
+        if (data == null || resultCode != Activity.RESULT_OK) return
+
+        val position = data.getIntExtra("POSITION_ON_RV", -1)
+        if (position != -1) {
+            /*
+             * Look for it in adapter
+             * Then postponeEnterTransition()
+             * Then addOnLayoutChangeLister on RecyclerView and
+             * startPostponedEnterRansition() #onLayoutChange
+             *
+             * Scroll RecyclerView to Position
+             * Then go to SharedElementCallback#onMapSharedElements
+             */
+        }
+
     }
 
     data class Sandbox(val name: String, val drawable: Int, val activity: Class<*>)
 
     class SandboxAdapter(
             val sandboxes: List<Sandbox>,
-            val clickListener: (Sandbox, View) -> Unit
+            val clickListener: (Sandbox, View, Int) -> Unit
     ) : RecyclerView.Adapter<SandboxAdapter.SandboxViewholder>() {
 
         override fun getItemCount() = sandboxes.size
 
         override fun onBindViewHolder(holder: SandboxViewholder, position: Int) {
-            holder.bind(sandboxes[position])
+            holder.bind(sandboxes[position], position)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SandboxViewholder {
@@ -58,14 +98,14 @@ class MainActivity : AppCompatActivity() {
 
         class SandboxViewholder(
                 view: View,
-                val clickListener: (Sandbox, View) -> Unit
+                val clickListener: (Sandbox, View, Int) -> Unit
         ) : RecyclerView.ViewHolder(view) {
             val sandboxTitle = view.findViewById(R.id.tv_sandbox_title) as TextView
 
-            fun bind(sandbox: Sandbox) {
+            fun bind(sandbox: Sandbox, position: Int) {
                 sandboxTitle.text = sandbox.name
                 itemView.setOnClickListener {
-                    clickListener(sandbox, sandboxTitle)
+                    clickListener(sandbox, sandboxTitle, position)
                 }
             }
         }

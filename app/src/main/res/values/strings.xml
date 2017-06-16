@@ -9,4 +9,5 @@
     <string name="title_activity_main_activity">Main Activity</string>
     <string name="title_activity_custom_view">CustomViewActivity</string>
     <string name="title_activity_fragment_transition">Fragment Transition Activity</string>
+    <string name="title_activity_touch_view">Touch View Activity</string>
 </resources>
