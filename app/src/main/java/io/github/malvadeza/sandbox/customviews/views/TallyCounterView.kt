@@ -16,7 +16,6 @@ class TallyCounterView(context: Context, attrs: AttributeSet? = null) : View(con
     var count = 0
         set(value) {
             field = Math.min(value, 9999)
-            displayedCount = "%04d".format(field)
             invalidate()
         }
 
@@ -26,8 +25,6 @@ class TallyCounterView(context: Context, attrs: AttributeSet? = null) : View(con
     var backgroundPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     var linePaint = Paint(Paint.ANTI_ALIAS_FLAG)
     var numberPaint = TextPaint(Paint.ANTI_ALIAS_FLAG)
-
-    private var displayedCount = "0000"
 
     init {
         backgroundPaint.color = ContextCompat.getColor(context, R.color.colorPrimary)
@@ -52,10 +49,10 @@ class TallyCounterView(context: Context, attrs: AttributeSet? = null) : View(con
         val baselineY = Math.round(canvasHeight * 0.6f).toFloat()
         canvas.drawLine(0f, baselineY, canvasWidth.toFloat(), baselineY, linePaint)
 
-        val textWidth = numberPaint.measureText(displayedCount)
+        val textWidth = numberPaint.measureText("%04d".format(count))
         val textX = Math.round(centerX - textWidth * 0.5f).toFloat()
 
-        canvas.drawText(displayedCount, textX, baselineY, numberPaint)
+        canvas.drawText("%04d".format(count), textX, baselineY, numberPaint)
     }
 
     fun reset() {
