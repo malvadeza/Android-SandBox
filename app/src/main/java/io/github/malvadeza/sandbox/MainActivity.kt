@@ -8,27 +8,37 @@ import android.support.v4.app.SharedElementCallback
 import android.support.v4.view.ViewCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.Toolbar
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import io.github.malvadeza.sandbox.cardview.recyclerview.RecyclerActivity
+import io.github.malvadeza.sandbox.coordinator.CoordinatorActivity
 import io.github.malvadeza.sandbox.customviews.TallyCounterActivity
 import io.github.malvadeza.sandbox.customviews.TouchViewActivity
 import io.github.malvadeza.sandbox.fragmenttransition.FragmentTransitionActivity
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
+        Timber.d("Application ${SandBoxApplication.instance}");
+
+        val toolbar = findViewById(R.id.toolbar) as Toolbar
+        setSupportActionBar(toolbar)
+
         val activities = listOf(
                 Sandbox("Tally Counter View", -1, TallyCounterActivity::class.java),
                 Sandbox("Fragment Transition", -1, FragmentTransitionActivity::class.java),
-                Sandbox("Touch View", -1, TouchViewActivity::class.java)
+                Sandbox("Touch View", -1, TouchViewActivity::class.java),
+                Sandbox("Coordinator Activity", -1, CoordinatorActivity::class.java),
+                Sandbox("Recycler Card Activity", -1, RecyclerActivity::class.java)
+
         )
         val sandboxesList = findViewById(R.id.rv_sandboxes) as RecyclerView
         val sandboxAdapter = SandboxAdapter(activities) { sandbox, sharedView, position ->

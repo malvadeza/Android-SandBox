@@ -47,12 +47,12 @@ class TallyCounterView(context: Context, attrs: AttributeSet? = null) : View(con
         canvas.drawRoundRect(backgroundRect, cornerRadius, cornerRadius, backgroundPaint)
 
         val baselineY = Math.round(canvasHeight * 0.6f).toFloat()
-        canvas.drawLine(0f, baselineY, canvasWidth.toFloat(), baselineY, linePaint)
 
         val textWidth = numberPaint.measureText("%04d".format(count))
         val textX = Math.round(centerX - textWidth * 0.5f).toFloat()
 
         canvas.drawText("%04d".format(count), textX, baselineY, numberPaint)
+        canvas.drawLine(0f, baselineY, canvasWidth.toFloat(), baselineY, linePaint)
     }
 
     fun reset() {

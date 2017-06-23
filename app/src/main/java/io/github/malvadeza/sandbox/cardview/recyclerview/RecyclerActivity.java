@@ -13,7 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.github.malvadeza.sandbox.R;
+import io.github.malvadeza.sandbox.SandBoxApplication;
 import io.github.malvadeza.sandbox.cardview.ListElement;
+import timber.log.Timber;
 
 public class RecyclerActivity extends AppCompatActivity {
 
@@ -23,6 +25,8 @@ public class RecyclerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recycler);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Timber.d("Application " + SandBoxApplication.instance);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

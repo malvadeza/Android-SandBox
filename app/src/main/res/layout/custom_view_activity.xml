@@ -1,41 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:padding="@dimen/activity_horizontal_margin"
-    tools:context="io.github.malvadeza.sandbox.customviews.TallyCounterActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:text="Tally Counter View"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:transitionName="title"
-        tools:targetApi="lollipop" />
+    tools:context=".customviews.TallyCounterActivity">
 
     <LinearLayout
-        android:transitionGroup="true"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <io.github.malvadeza.sandbox.customviews.views.TallyCounterView
-            android:id="@+id/counter_view"
-            android:layout_width="320dp"
-            android:layout_height="300dp"
-            android:layout_gravity="center" />
-
-        <Button
-            android:id="@+id/click_me"
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:padding="20dp"
-            android:text="Click Me!" />
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="Tally Counter View"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:transitionName="title"
+                tools:targetApi="lollipop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:transitionGroup="true">
+
+                <io.github.malvadeza.sandbox.customviews.views.TallyCounterView
+                    android:id="@+id/counter_view"
+                    android:layout_width="320dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center" />
+
+                <Button
+                    android:id="@+id/click_me"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="20dp"
+                    android:text="Click Me!" />
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

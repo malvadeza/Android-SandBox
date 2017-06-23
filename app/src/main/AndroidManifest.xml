@@ -11,51 +11,31 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main_activity"
-            android:theme="@style/AppTheme">
+            android:label="@string/title_activity_main_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".cursorloadersqlite.CursorLoaderSQLite"
-            android:label="@string/title_activity_cursor_loader_sqlite"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".handlers.Handlers"
-            android:label="@string/title_activity_handlers"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".threads.ThreadsActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".google.GoogleLoginActivity"
-            android:label="@string/title_activity_google_login"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".cardview.listview.ListActivity"
-            android:label="@string/title_activity_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".cardview.recyclerview.RecyclerActivity"
-            android:label="@string/title_activity_recycler"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_recycler" />
+
         <activity
             android:name=".customviews.TallyCounterActivity"
-            android:label="@string/title_activity_custom_view"
-            android:theme="@style/AppTheme.CustomView" />
+            android:label="@string/title_activity_custom_view" />
 
         <activity
             android:name=".fragmenttransition.FragmentTransitionActivity"
-            android:label="@string/title_activity_fragment_transition"
-            android:theme="@style/AppTheme.CustomView" />
+            android:label="@string/title_activity_fragment_transition" />
 
         <activity android:name=".customviews.TouchViewActivity"
-            android:label="@string/title_activity_touch_view"
-            android:theme="@style/AppTheme.CustomView" />
+            android:label="@string/title_activity_touch_view" />
+
+        <activity android:name=".coordinator.CoordinatorActivity"
+            android:label="@string/title_activity_coordinator" />
 
         <service
             android:name=".threads.ThreadsService"
