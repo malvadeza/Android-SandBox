@@ -31,9 +31,9 @@ class TouchView(context: Context, attrs: AttributeSet? = null) : View(context, a
 
     init {
         val a = context.obtainStyledAttributes(attrs, R.styleable.TouchView, 0, 0)
-        val touchColor = a.getColor(R.styleable.TouchView_touchColor,
+        val touchColor = a.getColor(R.styleable.TouchView_tv_touchColor,
                 ContextCompat.getColor(context, android.R.color.white))
-        val backgroundColor = a.getColor(R.styleable.TouchView_backgroundColor,
+        val backgroundColor = a.getColor(R.styleable.TouchView_tv_backgroundColor,
                 ContextCompat.getColor(context, android.R.color.holo_blue_dark))
 
         a.recycle()

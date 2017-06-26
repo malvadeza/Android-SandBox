@@ -37,6 +37,9 @@
         <activity android:name=".coordinator.CoordinatorActivity"
             android:label="@string/title_activity_coordinator" />
 
+        <activity android:name=".architecturecomponents.ViewModelActivity"
+            android:label="@string/title_activity_viewmodel" />
+
         <service
             android:name=".threads.ThreadsService"
             android:enabled="true"

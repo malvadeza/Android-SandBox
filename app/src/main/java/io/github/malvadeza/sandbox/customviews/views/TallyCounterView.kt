@@ -10,6 +10,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import io.github.malvadeza.sandbox.R
+import timber.log.Timber
 
 class TallyCounterView(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
 
@@ -20,20 +21,31 @@ class TallyCounterView(context: Context, attrs: AttributeSet? = null) : View(con
         }
 
     val backgroundRect = RectF()
-    val cornerRadius = Math.round(2f * resources.displayMetrics.density).toFloat()
+    var cornerRadius = 0f
 
     var backgroundPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     var linePaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    var numberPaint = TextPaint(Paint.ANTI_ALIAS_FLAG)
+    var textPaint = TextPaint(Paint.ANTI_ALIAS_FLAG)
 
     init {
-        backgroundPaint.color = ContextCompat.getColor(context, R.color.colorPrimary)
+        val a = context.obtainStyledAttributes(attrs, R.styleable.TallyCounterView, 0, 0)
 
-        linePaint.color = ContextCompat.getColor(context, R.color.colorAccent)
-        linePaint.strokeWidth = 1f
+        backgroundPaint.color = a.getColor(R.styleable.TallyCounterView_tcv_backgroundColor,
+                ContextCompat.getColor(context, R.color.colorPrimary))
+        cornerRadius = a.getDimensionPixelSize(R.styleable.TallyCounterView_tcv_borderRadius,
+                Math.round(4f * resources.displayMetrics.density)).toFloat()
 
-        numberPaint.color = ContextCompat.getColor(context, android.R.color.white)
-        numberPaint.textSize = Math.round(64f * resources.displayMetrics.scaledDensity).toFloat()
+        linePaint.color = a.getColor(R.styleable.TallyCounterView_tcv_lineColor,
+                ContextCompat.getColor(context, R.color.colorAccent))
+        linePaint.strokeWidth = a.getDimensionPixelSize(R.styleable.TallyCounterView_tcv_lineWidth,
+                Math.round(1f * resources.displayMetrics.density)).toFloat()
+
+        textPaint.color = a.getColor(R.styleable.TallyCounterView_tcv_textColor,
+                ContextCompat.getColor(context, android.R.color.white))
+        textPaint.textSize = a.getDimensionPixelSize(R.styleable.TallyCounterView_tcv_textSize,
+                Math.round(64f * resources.displayMetrics.scaledDensity)).toFloat()
+
+        a.recycle()
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -48,11 +60,30 @@ class TallyCounterView(context: Context, attrs: AttributeSet? = null) : View(con
 
         val baselineY = Math.round(canvasHeight * 0.6f).toFloat()
 
-        val textWidth = numberPaint.measureText("%04d".format(count))
+        val textWidth = textPaint.measureText("%04d".format(count))
         val textX = Math.round(centerX - textWidth * 0.5f).toFloat()
 
-        canvas.drawText("%04d".format(count), textX, baselineY, numberPaint)
+        canvas.drawText("%04d".format(count), textX, baselineY, textPaint)
         canvas.drawLine(0f, baselineY, canvasWidth.toFloat(), baselineY, linePaint)
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        Timber.d("onMeasure width -> ${MeasureSpec.toString(widthMeasureSpec)}")
+        Timber.d("onMeasure height -> ${MeasureSpec.toString(heightMeasureSpec)}")
+
+        val widthMode = MeasureSpec.getMode(widthMeasureSpec)
+        val widthSize = MeasureSpec.getSize(widthMeasureSpec)
+
+        val heightMode = MeasureSpec.getMode(heightMeasureSpec)
+        val heightSize = MeasureSpec.getSize(heightMeasureSpec)
+
+
+
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+    }
+
+    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+        super.onLayout(changed, left, top, right, bottom)
     }
 
     fun reset() {

@@ -14,6 +14,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import io.github.malvadeza.sandbox.architecturecomponents.ViewModelActivity
 import io.github.malvadeza.sandbox.cardview.recyclerview.RecyclerActivity
 import io.github.malvadeza.sandbox.coordinator.CoordinatorActivity
 import io.github.malvadeza.sandbox.customviews.TallyCounterActivity
@@ -37,7 +38,8 @@ class MainActivity : AppCompatActivity() {
                 Sandbox("Fragment Transition", -1, FragmentTransitionActivity::class.java),
                 Sandbox("Touch View", -1, TouchViewActivity::class.java),
                 Sandbox("Coordinator Activity", -1, CoordinatorActivity::class.java),
-                Sandbox("Recycler Card Activity", -1, RecyclerActivity::class.java)
+                Sandbox("Recycler Card Activity", -1, RecyclerActivity::class.java),
+                Sandbox("ViewModel Activity", -1, ViewModelActivity::class.java)
 
         )
         val sandboxesList = findViewById(R.id.rv_sandboxes) as RecyclerView

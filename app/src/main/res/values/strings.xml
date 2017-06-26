@@ -11,4 +11,5 @@
     <string name="title_activity_fragment_transition">Fragment Transition Activity</string>
     <string name="title_activity_touch_view">Touch View Activity</string>
     <string name="title_activity_coordinator">Coordinator Activity</string>
+    <string name="title_activity_viewmodel">ViewModel Activity</string>
 </resources>

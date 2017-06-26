@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <declare-styleable name="TallyCounterView">
+        <attr name="tcv_textColor" format="color" />
+        <attr name="tcv_textSize" format="dimension" />
+        <attr name="tcv_backgroundColor" format="color" />
+        <attr name="tcv_borderRadius" format="dimension" />
+        <attr name="tcv_lineColor" format="color"/>
+        <attr name="tcv_lineWidth" format="dimension" />
+    </declare-styleable>
+
     <declare-styleable name="TouchView">
-        <attr name="touchColor" format="color" />
-        <attr name="backgroundColor" format="color" />
+        <attr name="tv_touchColor" format="color" />
+        <attr name="tv_backgroundColor" format="color" />
     </declare-styleable>
 
 </resources>

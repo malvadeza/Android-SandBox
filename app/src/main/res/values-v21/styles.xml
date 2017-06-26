@@ -8,12 +8,15 @@
         <!--<item name="android:windowActivityTransitions">false</item>-->
         <!--<item name="android:windowSharedElementsUseOverlay">false</item>-->
         <!--<item name="android:windowSharedElementExitTransition">@transition/custom_title_exit</item>-->
+        <!--<item name="android:windowReenterTransition">@android:transition/slide_right</item>-->
+        <!--<item name="android:windowExitTransition">@android:transition/explode</item>-->
+        <!--<item name="android:windowEnterTransition">@transition/custom_enter</item>-->
+        <!--<item name="android:windowReturnTransition">@transition/custom_return</item>-->
     </style>
 <!--
     &lt;!&ndash;<style name="AppTheme.CustomView">
         <item name="android:windowSharedElementEnterTransition">@transition/custom_title_enter</item>
-        <item name="android:windowEnterTransition">@transition/custom_enter</item>
-        <item name="android:windowReturnTransition">@transition/custom_return</item>
+
     </style>&ndash;&gt;
 
     <style name="AppTheme.CustomView" />

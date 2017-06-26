@@ -9,9 +9,9 @@
     tools:context=".customviews.TallyCounterActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -51,7 +51,12 @@
                     android:id="@+id/counter_view"
                     android:layout_width="320dp"
                     android:layout_height="300dp"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center"
+                    app:tcv_backgroundColor="@android:color/holo_purple"
+                    app:tcv_borderRadius="25dp"
+                    app:tcv_lineWidth="1dp"
+                    app:tcv_textColor="@android:color/holo_orange_light"
+                    app:tcv_textSize="90sp" />
 
                 <Button
                     android:id="@+id/click_me"
