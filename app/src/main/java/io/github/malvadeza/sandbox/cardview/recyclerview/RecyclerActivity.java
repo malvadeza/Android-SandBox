@@ -26,27 +26,29 @@ public class RecyclerActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Timber.d("Application " + SandBoxApplication.instance);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        layoutManager.setStackFromEnd(true);
+        layoutManager.setReverseLayout(true);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(layoutManager);
 
         List<ListElement> list = new ArrayList<>();
         for (int i = 0 ; i < 20 ; ++i) {
             list.add(new ListElement("TextOne " + i, "TextTwo " + i));
         }
 
-        ItemAdapter itemAdapter = new ItemAdapter(list);
+        final ItemAdapter itemAdapter = new ItemAdapter(list);
         recyclerView.setAdapter(itemAdapter);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final ListElement newElement = new ListElement("New item", "New item!");
+                itemAdapter.addItem(newElement);
+            }
+        });
     }
 
 }

@@ -54,7 +54,7 @@
                     android:layout_gravity="center"
                     app:tcv_backgroundColor="@android:color/holo_purple"
                     app:tcv_borderRadius="25dp"
-                    app:tcv_lineWidth="1dp"
+                    app:tcv_lineWidth="1sp"
                     app:tcv_textColor="@android:color/holo_orange_light"
                     app:tcv_textSize="90sp" />
 

@@ -6,7 +6,9 @@
         <attr name="tcv_textSize" format="dimension" />
         <attr name="tcv_backgroundColor" format="color" />
         <attr name="tcv_borderRadius" format="dimension" />
-        <attr name="tcv_lineColor" format="color"/>
+        <attr name="tcv_baselineColor" format="color"/>
+        <attr name="tcv_ascDescLineColor" format="color" />
+        <attr name="tcv_topBotLineColor" format="color" />
         <attr name="tcv_lineWidth" format="dimension" />
     </declare-styleable>
 
