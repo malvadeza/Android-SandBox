@@ -22,7 +22,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_scrollFlags="scroll|snap"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
         </android.support.design.widget.AppBarLayout>
 
@@ -39,6 +39,17 @@
                 app:spanCount="2"
                 tools:listitem="@layout/sandbox_list_item" />
         </FrameLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_clickMe"
+            android:transitionName="fab_transition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@android:drawable/ic_dialog_alert"
+            app:fabSize="normal"
+            app:useCompatPadding="true" />
     </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView

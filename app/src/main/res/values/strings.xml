@@ -6,10 +6,12 @@
     <string name="title_activity_google_login">GoogleLoginActivity</string>
     <string name="title_activity_list">ListActivity</string>
     <string name="title_activity_recycler">RecyclerActivity</string>
-    <string name="title_activity_main_activity">Main Activity</string>
+    <string name="title_activity_main_activity">SandBox</string>
     <string name="title_activity_custom_view">CustomViewActivity</string>
     <string name="title_activity_fragment_transition">Fragment Transition Activity</string>
     <string name="title_activity_touch_view">Touch View Activity</string>
     <string name="title_activity_coordinator">Coordinator Activity</string>
     <string name="title_activity_viewmodel">ViewModel Activity</string>
+    <string name="title_activity_animation">Animation Activity</string>
+    <string name="title_activity_animation_transition">Animation Transition Activity</string>
 </resources>

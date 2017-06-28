@@ -14,6 +14,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import io.github.malvadeza.sandbox.animation.AnimationActivity
+import io.github.malvadeza.sandbox.animation.AnimationTransitionActivity
 import io.github.malvadeza.sandbox.architecturecomponents.ViewModelActivity
 import io.github.malvadeza.sandbox.cardview.recyclerview.RecyclerActivity
 import io.github.malvadeza.sandbox.coordinator.CoordinatorActivity
@@ -28,10 +30,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
-        Timber.d("Application ${SandBoxApplication.instance}");
-
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+
+        val clickMe = findViewById(R.id.fab_clickMe)
+        clickMe.setOnClickListener {
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this, it, "fab_transition")
+            startActivity(Intent(this, AnimationTransitionActivity::class.java), options.toBundle())
+        }
 
         val activities = listOf(
                 Sandbox("Tally Counter View", -1, TallyCounterActivity::class.java),
@@ -39,8 +45,8 @@ class MainActivity : AppCompatActivity() {
                 Sandbox("Touch View", -1, TouchViewActivity::class.java),
                 Sandbox("Coordinator Activity", -1, CoordinatorActivity::class.java),
                 Sandbox("Recycler Card Activity", -1, RecyclerActivity::class.java),
-                Sandbox("ViewModel Activity", -1, ViewModelActivity::class.java)
-
+                Sandbox("ViewModel Activity", -1, ViewModelActivity::class.java),
+                Sandbox("Animation Activity", -1, AnimationActivity::class.java)
         )
         val sandboxesList = findViewById(R.id.rv_sandboxes) as RecyclerView
         val sandboxAdapter = SandboxAdapter(activities) { sandbox, sharedView, position ->
@@ -61,9 +67,11 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                Log.d("MainActivity", "setExitSharedElementCallback##onMapSharedElements")
+                Timber.d("setExitSharedElementCallback##onMapSharedElements")
             }
         })
+
+
 
         sandboxesList.adapter = sandboxAdapter
         sandboxesList.setHasFixedSize(true)

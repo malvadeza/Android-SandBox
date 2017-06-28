@@ -14,3 +14,11 @@ already did and can remember later
  * [http://blog.danlew.net/2016/07/19/a-deep-dive-into-android-view-constructors/](http://blog.danlew.net/2016/07/19/a-deep-dive-into-android-view-constructors/)
  * [https://www.youtube.com/watch?v=dLl0ovmta6A](https://www.youtube.com/watch?v=dLl0ovmta6A)
  * (Alternative) [https://www.youtube.com/watch?v=4NNmMO8Aykw](https://www.youtube.com/watch?v=4NNmMO8Aykw)
+
+## Transitions/Animations
+
+> Current headache
+
+ * [Droidcon 2016 - Ben Weiss - Window content transitions explained](https://www.youtube.com/watch?v=VnB8XNi-kWA)
+ * [Droidcon 2016 - Nick Butcher - Animatable](https://www.youtube.com/watch?v=86p1GPEv_fY)
+ * [Google I/O 2016 - A window into transitions](https://www.youtube.com/watch?v=4L4fLrWDvAU)
