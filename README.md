@@ -22,3 +22,10 @@ already did and can remember later
  * [Droidcon 2016 - Ben Weiss - Window content transitions explained](https://www.youtube.com/watch?v=VnB8XNi-kWA)
  * [Droidcon 2016 - Nick Butcher - Animatable](https://www.youtube.com/watch?v=86p1GPEv_fY)
  * [Google I/O 2016 - A window into transitions](https://www.youtube.com/watch?v=4L4fLrWDvAU)
+   * [Android-unsplash](https://github.com/googlesamples/android-unsplash)
+   * [Plaid](https://github.com/nickbutcher/plaid)
+   * [OurStreets](https://github.com/googlesamples/android-ourstreets)
+   
+## Styles/Themes
+
+ *  [Google I/O 2016 - Android themes & styles demystified](https://www.youtube.com/watch?v=TIHXGwRTMWI)
