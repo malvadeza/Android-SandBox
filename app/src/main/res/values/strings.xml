@@ -14,4 +14,5 @@
     <string name="title_activity_viewmodel">ViewModel Activity</string>
     <string name="title_activity_animation">Animation Activity</string>
     <string name="title_activity_animation_transition">Animation Transition Activity</string>
+    <string name="title_activity_visibility">Visibility Activity</string>
 </resources>

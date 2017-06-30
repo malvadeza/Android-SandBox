@@ -22,6 +22,7 @@ import io.github.malvadeza.sandbox.coordinator.CoordinatorActivity
 import io.github.malvadeza.sandbox.customviews.TallyCounterActivity
 import io.github.malvadeza.sandbox.customviews.TouchViewActivity
 import io.github.malvadeza.sandbox.fragmenttransition.FragmentTransitionActivity
+import io.github.malvadeza.sandbox.visibility.VisibilityActivity
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
@@ -46,7 +47,8 @@ class MainActivity : AppCompatActivity() {
                 Sandbox("Coordinator Activity", -1, CoordinatorActivity::class.java),
                 Sandbox("Recycler Card Activity", -1, RecyclerActivity::class.java),
                 Sandbox("ViewModel Activity", -1, ViewModelActivity::class.java),
-                Sandbox("Animation Activity", -1, AnimationActivity::class.java)
+                Sandbox("Animation Activity", -1, AnimationActivity::class.java),
+                Sandbox("Visibility Activity", -1, VisibilityActivity::class.java)
         )
         val sandboxesList = findViewById(R.id.rv_sandboxes) as RecyclerView
         val sandboxAdapter = SandboxAdapter(activities) { sandbox, sharedView, position ->

@@ -52,6 +52,11 @@
             android:label="@string/title_activity_animation_transition"
             android:theme="@style/SuperTransition" />
 
+        <activity
+            android:name=".visibility.VisibilityActivity"
+            android:label="@string/title_activity_visibility"
+            android:theme="@style/SuperTransition" />
+
         <service
             android:name=".threads.ThreadsService"
             android:enabled="true"
